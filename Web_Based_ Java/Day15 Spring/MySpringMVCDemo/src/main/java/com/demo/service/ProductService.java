@@ -1,0 +1,19 @@
+package com.demo.service;
+
+import java.util.List;
+
+import com.demo.beans.Product;
+
+public interface ProductService {
+
+	List<Product> getAllProduct();
+
+	boolean AddProduct(Product p);
+
+	Product getbyId(int pid);
+
+	boolean updateproduct(Product p);
+
+	boolean deletebyid(int pid);
+
+}

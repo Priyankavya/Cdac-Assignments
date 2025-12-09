@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border='2'>
+<tr>
+<th>Student Id</th>
+<th>Student Name</th>
+<th>Student standard</th>
+<th>Maths Marks</th>
+<th>Science marks</th>
+<th>English Marks</th>
+<th>Action</th>
+</tr>
+<c:forEach var="st" items="${slist }">
+<tr>
+<td>${st.sid }</td>
+<td>${st.sname }</td>
+
+<td>${st.maths}</td>
+<td>${st.science}</td>
+<td>${st.english}</td>
+<td>${st.std }</td>
+<td><a href="deletestudent/${st.sid }">delete</a>/<a href="editstudent/${st.sid }">edit</a></td>
+</tr>
+
+
+
+</c:forEach>
+
+</table>
+
+<a href="addstudent">add new student</a>
+</body>
+</html>

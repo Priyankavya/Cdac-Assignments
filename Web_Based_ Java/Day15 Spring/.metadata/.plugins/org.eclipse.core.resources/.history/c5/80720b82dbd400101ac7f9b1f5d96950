@@ -1,0 +1,66 @@
+package com.demo.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.demo.beans.Student;
+
+@Repository
+public class StudentDaoImpl implements StudentDao {
+
+	@Autowired
+	JdbcTemplate jdbctemplate;
+
+	public List<Student> getAllStudent() {
+		
+		List<Student> slist=jdbctemplate.query("select * from Studentsmvc ", (rs,numrows)->{
+		
+			Student s=new Student();
+			s.setSid(rs.getInt(1));
+			s.setSname(rs.getString(2));
+			s.setStd(rs.getInt(3));
+			s.setMaths(rs.getInt(4));
+			s.setScience(rs.getInt(5));
+		
+			
+			
+			return s;
+		});
+		return slist;
+	}
+
+	@Override
+	public Student searchById(int sid) {
+		Student s=jdbctemplate.queryForObject("select * from Studentsmvc where sid=?", 
+				new Object[] {sid},BeanPropertyRowMapper.newInstance(Student.class));
+		return s;
+	}
+
+	@Override
+	public boolean modifyStudent(Student s) {
+		int n=jdbctemplate.update("update Studentsmvc set maths=?,science=?,english=? where sid=?",
+				new Object[] {
+						s.getSid(),s.getSname(),s.getStd(),s.getMaths(),s.getScience(),s.getEnglish()
+				});
+		return n>0;
+	}
+
+	@Override
+	public boolean removestudent(int sid) {
+		int n=jdbctemplate.update("delete from Studentmvc where sid=?",new Object[] {sid});
+		return n>0;
+	}
+
+	@Override
+	public boolean addstudent(Student s) {
+		int n=jdbctemplate.update(" insert into Studentsmvc values(?,?,?,?,?)",new Object[] {
+				s.getSid(),s.getSname(),s.getStd(),s.getMaths(),s.getScience(),s.getEnglish()
+		});
+		return n>0;
+	}
+
+}

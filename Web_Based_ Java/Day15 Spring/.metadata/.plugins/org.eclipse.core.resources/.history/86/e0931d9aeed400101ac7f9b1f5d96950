@@ -1,0 +1,94 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+public class MyRegisterUser {
+
+	
+	private int id;
+	private String Userid;
+	private String name;
+	private String Gender;
+	private LocalDate dob;
+	private String Username;
+	private String password;
+	private String Skill;
+	
+	String photoPath;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUserid() {
+		return Userid;
+	}
+
+	public void setUserid(String userid) {
+		Userid = userid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public String getUsername() {
+		return Username;
+	}
+
+	public void setUsername(String username) {
+		Username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getSkill() {
+		return Skill;
+	}
+
+	public void setSkill(String skill) {
+		Skill = skill;
+	}
+
+	public String getPhotoPath() {
+		return photoPath;
+	}
+
+	public void setPhotoPath(String photoPath) {
+		this.photoPath = photoPath;
+	}
+	
+	
+	
+	
+}

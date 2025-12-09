@@ -1,0 +1,6 @@
+package com.demo.SpringbootRestWebservice.beans;
+
+public class MyUser {
+	
+
+}

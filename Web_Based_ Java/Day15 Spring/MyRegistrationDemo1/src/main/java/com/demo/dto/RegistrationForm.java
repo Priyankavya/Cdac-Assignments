@@ -1,0 +1,99 @@
+package com.demo.dto;
+
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
+
+public class RegistrationForm {
+
+    private String Userid;
+	private String name;
+	private String Gender;
+	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private LocalDate dob;
+	
+	private String username;
+	private String password;
+	private String confirmPassword;
+	
+	private String[] Skills;
+	
+	private MultipartFile photo;
+
+	public String getUserid() {
+		return Userid;
+	}
+
+	public void setUserid(String userid) {
+		Userid = userid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+
+
+	public String[] getSkills() {
+		return Skills;
+	}
+
+	public void setSkills(String[] skills) {
+		Skills = skills;
+	}
+
+	public MultipartFile getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(MultipartFile photo) {
+		this.photo = photo;
+	}
+	
+}

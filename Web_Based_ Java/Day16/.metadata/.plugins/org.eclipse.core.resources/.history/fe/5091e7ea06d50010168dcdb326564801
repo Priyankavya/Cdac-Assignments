@@ -1,0 +1,5 @@
+package com.demo.SpringbootRestWebservice.controller;
+
+public class Hello {
+
+}

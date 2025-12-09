@@ -1,0 +1,19 @@
+package com.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.demo.beans.MyUser;
+import com.demo.dao.LoginDao;
+
+@Repository
+public class LoginServiceImpl implements LoginService {
+
+	@Autowired
+	private LoginDao ldao;
+	public MyUser validateUser(String uname, String passwd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

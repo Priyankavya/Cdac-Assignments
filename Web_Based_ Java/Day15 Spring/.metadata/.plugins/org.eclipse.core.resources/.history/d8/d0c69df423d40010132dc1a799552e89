@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+
+<form action="/NewStudentMVC/login/validateUser" method="post">
+
+Username: <input type="text" id="uname"  name="uname"><br/>
+
+password: <input type="text" id="pass"  name="pass"><br/>
+
+<button type="submit" name="login" id="login" value="login">login</button>
+
+</form>
+
+<a href="registerme">Register me? </a> / <a href="#">Forgot password?</a>
+
+</body>
+</html>

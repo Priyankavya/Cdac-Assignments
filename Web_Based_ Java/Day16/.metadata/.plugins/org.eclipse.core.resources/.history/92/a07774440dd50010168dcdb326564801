@@ -1,0 +1,17 @@
+package com.demo.SpringbootRestWebservice;
+
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringbootRestWebserviceApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx=(ApplicationContext) SpringApplication.run(SpringbootRestWebserviceApplication.class, args);
+
+		//SpringApplication.run(SpringbootRestWebserviceApplication.class, args);
+		
+	}
+
+}

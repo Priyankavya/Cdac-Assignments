@@ -1,0 +1,25 @@
+package com.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.demo.beans.Product;
+import com.demo.dao.ProductDao;
+@Repository
+public class ProductServiceImpl implements ProductService {
+ @Autowired
+ private ProductDao pdao;
+	@Override
+	public List<Product> getAllProduct() {
+		 
+		return pdao.ShowAllProduct();
+	}
+	@Override
+	public boolean AddProduct() {
+		
+		return pdao.AddProduct();
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.demo.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.demo.beans.MyUser;
+
+@Repository
+public class loginDaoImpl implements loginDao {
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	@Override
+	public MyUser authenticateuser(String uname, String passwd) {
+	
+		try {
+			MyUser u1=jdbcTemplate.queryForObject("select  Username as uname, Password as pass,role from user where Username=? and Password=?",
+					new Object[] {uname,passwd},BeanPropertyRowMapper.newInstance(MyUser.class));
+			System.out.println(u1);
+			return u1;
+			}catch(EmptyResultDataAccessException e) {
+				System.out.println("user not found");
+				return null;
+			}
+	}
+
+}
