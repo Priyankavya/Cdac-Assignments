@@ -1,0 +1,5 @@
+package com.example.SpringBootMVCProductCurd.dao;
+
+public interface ProductDao {
+
+}

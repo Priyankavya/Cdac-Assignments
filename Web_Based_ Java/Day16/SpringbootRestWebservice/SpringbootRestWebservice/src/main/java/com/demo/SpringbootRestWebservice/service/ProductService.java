@@ -8,4 +8,12 @@ public interface ProductService {
 
 	List<ProductDto> getAllProducts();
 
+	ProductDto getById(int pid);
+
+	boolean addproduct(ProductDto p);
+
+	boolean updateproduct(ProductDto p);
+
+	boolean deletebyId(int pid);
+
 }

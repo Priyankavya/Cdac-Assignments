@@ -1,0 +1,5 @@
+package com.example.SpringBootMVCProductCurd.beans;
+
+public class Product {
+
+}

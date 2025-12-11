@@ -4,7 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.SpringbootRestWebservice.dto.ProductDto;
@@ -20,9 +25,60 @@ public class ProductController {
 		List<ProductDto> plist=pservice.getAllProducts();
 		return ResponseEntity.ok(plist);
 		
-	}
+	 }
 	
 	@GetMapping("products/{pid}")
-	public ResponseEntity<ProductDto> getById(@PathVariable int )
+	public ResponseEntity<ProductDto> getById(@PathVariable int pid)
+	{
+		ProductDto p=pservice.getById(pid);
+		
+		if(p!=null)
+		{
+		return ResponseEntity.ok(p);
+		}
+		else
+		{
+			return (ResponseEntity<ProductDto>) ResponseEntity.notFound();
+		}
+	}
+	
+	
+	@PostMapping("/products")
+	public ResponseEntity<String> addProduct(@RequestBody ProductDto  p)
+	{
+		boolean status=pservice.addproduct(p);
+		
+		if(status)
+		{
+			return ResponseEntity.ok("data added successfully");
+		}
+		
+		else
+		{
+			return ResponseEntity.ok(" error occured");
+		}
+	}
+	
+	@PutMapping("/products/{pid}")
+	public ResponseEntity<String> updateProduct(@RequestBody ProductDto p){
+		boolean status=pservice.updateproduct(p);
+		if(status) {
+			return ResponseEntity.ok("data update successfully");
+		}else {
+			return ResponseEntity.ok("Error occured");
+		}
+		
+	}
 
+	
+	@DeleteMapping("/products/{pid}")
+	public ResponseEntity<String> deleteProduct(@PathVariable int pid ){
+		boolean status=pservice.deletebyId(pid);
+		if(status) {
+			return ResponseEntity.ok("Deleted successfully");
+		}
+		else {
+			return ResponseEntity.ok("Not Deleted");
+		}
+	}
 }

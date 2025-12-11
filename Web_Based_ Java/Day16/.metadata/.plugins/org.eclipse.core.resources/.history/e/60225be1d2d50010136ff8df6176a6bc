@@ -1,0 +1,5 @@
+package com.example.SpringBootMVCProductCurd.controller;
+
+public class ProductController {
+
+}

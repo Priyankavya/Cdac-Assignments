@@ -6,18 +6,18 @@ public class ProductDto {
 	private String pname;
 	private int qty;
 	private double price;
-	private String ldtstr;
+	private String mfgdate;
 	private int cid;
 	public ProductDto() {
 		super();
 	}
-	public ProductDto(int pid, String pname, int qty, double price, String ldtstr, int cid) {
+	public ProductDto(int pid, String pname, int qty, double price, String mfgdate, int cid) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
 		this.qty = qty;
 		this.price = price;
-		this.ldtstr = ldtstr;
+		this.mfgdate = mfgdate;
 		this.cid = cid;
 	}
 	public int getPid() {
@@ -44,11 +44,11 @@ public class ProductDto {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getLdtstr() {
-		return ldtstr;
+	public String getmfgdate() {
+		return mfgdate;
 	}
-	public void setLdtstr(String ldtstr) {
-		this.ldtstr = ldtstr;
+	public void setmfgdate(String ldtstr) {
+		this.mfgdate = ldtstr;
 	}
 	public int getCid() {
 		return cid;
@@ -59,7 +59,7 @@ public class ProductDto {
 	@Override
 	public String toString() {
 		return "ProductDto [pid=" + pid + ", pname=" + pname + ", qty=" + qty + ", price=" + price + ", ldtstr="
-				+ ldtstr + ", cid=" + cid + "]";
+				+ mfgdate + ", cid=" + cid + "]";
 	}
 	
 }
